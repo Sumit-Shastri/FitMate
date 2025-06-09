@@ -10,6 +10,7 @@ from django.conf import settings
 from django.urls import reverse
 from django.http import HttpResponse
 from django.utils.http import urlsafe_base64_decode
+from django.template.loader import render_to_string
 # Create your views here.
 
 def login_user(request):
@@ -37,56 +38,56 @@ def logout_user(request):
 
 
 def forgot_password(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
+    if request.method == "POST":
+        email = request.POST.get("email")
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
-            messages.error(request, "No account found with this email.")
-            return render(request, 'forgot_password.html')
+            messages.error(request, "Email not found!")
+            return redirect('forgot_password')
 
-        # Generate UID and token
         uid = urlsafe_base64_encode(force_bytes(user.pk))
         token = default_token_generator.make_token(user)
+        reset_url = f"http://127.0.0.1:8000/reset_password/{uid}/{token}/"
 
-        # Create password reset URL
-        reset_link = f"http://127.0.0.1:8000/reset_password/{uid}/{token}/"
+        subject = "Reset your password"
+        message = render_to_string("reset_email_template.html", {
+            'user': user,
+            'reset_url': reset_url,
+        })
 
-        # Send email
-        subject = "Password Reset Request"
-        message = f"Hi {user.username},\nClick the link below to reset your password:\n{reset_link}"
-        from_email = None
-        recipient_list = [email]
+        send_mail(subject, message, settings.EMAIL_HOST_USER, [email])
+        messages.success(request, "Password reset link sent! Check your email.")
+        return redirect('login_user')
 
-        send_mail(subject, message, from_email, recipient_list)
-        messages.success(request, "Password reset link has been sent to your email.")
-        return redirect('login')
-
-    return render(request, 'forgot_password.html')
+    return render(request, "forgot_password.html")
 
 
 def reset_password(request, uidb64, token):
     try:
         uid = urlsafe_base64_decode(uidb64).decode()
         user = User.objects.get(pk=uid)
-    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+    except (User.DoesNotExist, ValueError, TypeError, OverflowError):
         user = None
 
     if user is not None and default_token_generator.check_token(user, token):
-        if request.method == 'POST':
-            new_password = request.POST.get('new_password')
-            confirm_password = request.POST.get('confirm_password')
+        if request.method == "POST":
+            new_password = request.POST.get("new_password")
+            confirm_password = request.POST.get("confirm_password")
 
             if new_password != confirm_password:
-                messages.error(request, "Passwords do not match.")
-                return render(request, 'reset_password.html')
+                messages.error(request, "Passwords do not match!")
+                return redirect(request.path)
 
             user.set_password(new_password)
             user.save()
-            messages.success(request, "Password reset successful. Please login with your new password.")
-            return render(request, 'password_reset_success.html')
-
-        return render(request, 'reset_password.html')
+            messages.success(request, "Password has been reset successfully!")
+            return redirect('password_reset_success')
+        else:
+            return render(request, 'reset_password.html')
     else:
-        messages.error(request, "The password reset link is invalid or has expired.")
+        messages.error(request, "The reset link is invalid or expired.")
         return redirect('forgot_password')
+    
+def password_reset_success(request):
+    return render(request, 'password_reset_success.html')
