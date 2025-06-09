@@ -1,5 +1,5 @@
 """
-URL configuration for server_01 project.
+URL configuration for project_01 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -19,5 +19,5 @@ from django.urls import path , include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include('app.urls'))
+    path('',include('app_01.urls'))
 ]

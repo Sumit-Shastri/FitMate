@@ -1,0 +1,142 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('umg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.boxx {
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: transparent;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column; /* Stack content vertically */
+}
+
+.boxx h1 {
+    padding-left: 39%;
+}
+
+/* Inputs */
+.i-box {
+    position: relative;
+    margin-bottom: 20px;
+    padding-right: 50px;
+    border: none;
+    border-radius: 15%;
+}
+
+.i-box input {
+    width: 100%;
+    color: rgb(17, 1, 1);
+    padding: 10px 15px;
+    padding-left: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.i-box input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.i-box i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.remember-forget {
+    display: flex;
+    gap: 110px;
+}
+
+.sign-up {
+    padding-left: 22%;
+}
+
+/* --- Responsive Styles --- */
+
+/* Tablets and smaller screens */
+@media (max-width: 768px) {
+    .boxx {
+        max-width: 90%;
+        padding: 15px;
+        margin: 30px auto;
+    }
+
+    .boxx h1 {
+        padding-left: 0;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .remember-forget {
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sign-up {
+        padding-left: 0;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .boxx {
+        max-width: 95%;
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .boxx h1 {
+        font-size: 1.3rem;
+    }
+
+    .remember-forget {
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sign-up {
+        padding-left: 0;
+        margin-top: 15px;
+        font-size: 0.9rem;
+    }
+}
