@@ -1,14 +1,11 @@
 body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: url('umg.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-    margin: 0;
-    padding: 0;
 }
 
 .boxx {
@@ -17,49 +14,39 @@ body {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1); /* Slight transparency for better visibility */
+    background: transparent;
     border-radius: 8px;
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
     font-family: 'Poppins', sans-serif;
-    flex-direction: column;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for a floating effect */
-    
+    flex-direction: column; /* Stack content vertically */
+    padding-left: 50%;
 }
-
 
 .boxx h1 {
-    text-align: center;
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 20px;
+    padding-left: 39%;
 }
 
-
+/* Inputs */
 .i-box {
     position: relative;
     margin-bottom: 20px;
     padding-right: 50px;
-    flex-wrap: wrap;
-    transition: 1s ease-in-out;
-}
-
-.boxx.active .i-box.sign-in{
-    transform: translateY(-450px);
-
-
+    padding-left: 1px;
+    border: none;
+    border-radius: 15%;
 }
 
 .i-box input {
     width: 100%;
-    color: #111;
+    color: rgb(17, 1, 1);
     padding: 10px 15px;
     padding-left: 40px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
     outline: none;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s;
 }
 
 .i-box input:focus {
@@ -72,11 +59,10 @@ body {
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    color: #070000;
+    color: #888;
     font-size: 20px;
     pointer-events: none;
 }
-
 
 .btn {
     width: 100%;
@@ -87,27 +73,20 @@ body {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    transition: all 1s ease-in-out;
+    transition: 0.3s;
 }
 
 .btn:hover {
-    background: #072444;
-    transform: scale(0.9);
+    background: #0056b3;
 }
 
 .remember-forget {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: white;
+    gap: 110px;
 }
 
 .sign-up {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: white;
+    padding-left: 22%;
 }
 
 /* --- Responsive Styles --- */
@@ -115,24 +94,27 @@ body {
 /* Tablets and smaller screens */
 @media (max-width: 768px) {
     .boxx {
-        max-width: 80%;
+        max-width: 90%;
         padding: 15px;
         margin: 30px auto;
     }
 
     .boxx h1 {
-        font-size: 1.8rem;
+        padding-left: 0;
+        text-align: center;
+        font-size: 1.5rem;
     }
 
     .remember-forget {
+        gap: 40px;
         flex-wrap: wrap;
-        gap: 20px;
         justify-content: center;
     }
 
     .sign-up {
-        margin-top: 20px;
-        font-size: 1rem;
+        padding-left: 5px;
+        text-align: center;
+        margin-top: 10px;
     }
 }
 
@@ -145,33 +127,18 @@ body {
     }
 
     .boxx h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .remember-forget {
-        flex-direction: row;
+        gap: 20px;
+        flex-direction: column;
         align-items: center;
-        gap: 5px;
-        text-align: center;
     }
 
     .sign-up {
+        padding-left: 0;
+        margin-top: 15px;
         font-size: 0.9rem;
-    }
-}
-
-/* Laptops and larger screens */
-@media (min-width: 1024px) {
-    .boxx {
-        max-width: 500px;
-    }
-
-    .boxx h1 {
-        font-size: 2.2rem;
-    }
-
-    .btn {
-        font-size: 18px;
-        padding: 12px;
     }
 }
