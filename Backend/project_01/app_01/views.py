@@ -91,3 +91,22 @@ def reset_password(request, uidb64, token):
     
 def password_reset_success(request):
     return render(request, 'password_reset_success.html')
+
+def signup_user(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        emailid = request.POST.get("emailid")
+        password = request.POST.get("password")
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "Username already exists.")
+        elif User.objects.filter(email=emailid).exists():
+            messages.error(request, "Email already in use.")
+        else:
+            # Create the user
+            user = User.objects.create_user(username=username, email=emailid, password=password)
+            user.save()
+            messages.success(request, "Account created successfully!")
+            # You can redirect to login or dashboard here
+            return redirect('login')
+
+    return render(request, 'signup.html')
