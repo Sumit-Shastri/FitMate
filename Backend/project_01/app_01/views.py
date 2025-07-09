@@ -120,8 +120,7 @@ def step_01(request):
         gender = request.POST.get("gender")
         dob = request.POST.get("dob")
         pincode = request.POST.get("pincode")
-        state = request.POST.get("state")
-        city = request.POST.get("city")
+        #state = request.POST.get("state")
+        #city = request.POST.get("city")
         
-        return HttpResponse(firstName, lastName ,gender , dob , pincode , state , city)
-        return render(request , 'step1.html')
+        return HttpResponse(firstName, lastName, gender , dob , pincode)
