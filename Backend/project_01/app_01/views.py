@@ -99,6 +99,8 @@ def signup_user(request):
         password = request.POST.get("password")
         if User.objects.filter(username=username).exists():
             messages.error(request, "Username already exists.")
+            return render(request, 'signup.html')
+        
         elif User.objects.filter(email=emailid).exists():
             messages.error(request, "Email already in use.")
         else:
@@ -107,6 +109,19 @@ def signup_user(request):
             user.save()
             messages.success(request, "Account created successfully!")
             # You can redirect to login or dashboard here
-            return redirect('login')
+            return render(request, 'step1.html')
 
     return render(request, 'signup.html')
+
+def step_01(request):
+    if request.method == "POST":
+        firstName = request.POST.get("firstName")
+        lastName = request.POST.get("lastName")
+        gender = request.POST.get("gender")
+        dob = request.POST.get("dob")
+        pincode = request.POST.get("pincode")
+        state = request.POST.get("state")
+        city = request.POST.get("city")
+        
+        return HttpResponse(firstName, lastName ,gender , dob , pincode , state , city)
+        return render(request , 'step1.html')
