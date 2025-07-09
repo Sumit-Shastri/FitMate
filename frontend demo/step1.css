@@ -1,0 +1,91 @@
+body {
+
+    justify-content: center;
+
+    align-items: center;
+    height: 100%;
+    font-family: sans-serif;
+    /* background: url('umg.jpg') no-repeat; */
+    background-size: cover;
+    background-position: center;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 3px 4px 10px rgba(0, 0, 0, 0.1);
+    ;
+
+}
+
+.trans {
+    margin-bottom: 15px;
+    font-style: initial;
+}
+
+.progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.progress span {
+    font-size: 0.9rem;
+    color: rgb(104, 143, 138);
+    margin-right: 51vh;
+}
+
+.progress-indi {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50vh;
+    gap: 5px;
+}
+
+.progress-indi div {
+    background: #6d5f5f;
+    width: 15px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.progress-indi .Chalu {
+    background: green;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 0.9rem;
+    padding-right: 50vh;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #7e7070;
+    border-radius: 5px;
+}
+
+.gender {
+    display: flex;
+    gap: 5px;
+}
+
+.gender label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: ro;
+}
