@@ -1,91 +1,114 @@
 body {
-
-    justify-content: center;
-
-    align-items: center;
-    height: 100%;
-    font-family: sans-serif;
-    /* background: url('umg.jpg') no-repeat; */
-    background-size: cover;
-    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
 }
 
 .box {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5vh;
-    padding: 20px;
-    max-width: 400px;
-    width: 100%;
+    width: 90%;
+    max-width: 600px;
+    background: #ffffff;
+    margin: 50px auto;
+    padding: 30px 40px;
     border-radius: 15px;
-    box-shadow: 0 3px 4px 10px rgba(0, 0, 0, 0.1);
-    ;
-
-}
-
-.trans {
-    margin-bottom: 15px;
-    font-style: initial;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .progress {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
 }
 
 .progress span {
-    font-size: 0.9rem;
-    color: rgb(104, 143, 138);
-    margin-right: 51vh;
+    font-weight: 600;
+    color: #333;
 }
 
 .progress-indi {
     display: flex;
-    flex-direction: row;
-    margin-left: 50vh;
-    gap: 5px;
+    gap: 10px;
 }
 
 .progress-indi div {
-    background: #6d5f5f;
-    width: 15px;
-    height: 5px;
+    height: 10px;
+    flex: 1;
+    background: #e0e0e0;
     border-radius: 5px;
 }
 
 .progress-indi .Chalu {
-    background: green;
+    background: #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+.trans h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #007bff;
+    font-size: 24px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-label {
-    font-size: 0.9rem;
-    padding-right: 50vh;
+form label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
 }
 
-input,
-select {
+form input[type="text"],
+form input[type="date"],
+form input[type="number"],
+form select {
     width: 100%;
-    padding: 6px;
-    border: 1px solid #7e7070;
-    border-radius: 5px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border 0.2s;
 }
 
-.gender {
-    display: flex;
-    gap: 5px;
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.gender,
+.dob,
+.Country,
+.pinc,
+.Rdo {
+    margin-top: 10px;
 }
 
 .gender label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    flex-direction: ro;
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+button#Next {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button#Next:hover {
+    background: #0056b3;
 }
