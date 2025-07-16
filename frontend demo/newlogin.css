@@ -45,8 +45,8 @@ a {
 
 button {
     border-radius: 20px;
-    border: 1px solid #FF4B2B;
-    background-color: #FF4B2B;
+    border: 1px solid #8c64a3;
+    background-color: #bd6792;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -109,7 +109,8 @@ input {
 }
 
 .sign-in-container {
-    transform: translateX(0);
+    left: 0;
+    width: 50%;
     z-index: 2;
 }
 
@@ -118,13 +119,14 @@ input {
 }
 
 .sign-up-container {
-    transform: translateX(-100%);
+    left: 0;
+    width: 50%;
     opacity: 0;
     z-index: 1;
 }
 
 .container.right-panel-active .sign-up-container {
-    transform: translateX(0);
+    transform: translateX(100%);
     opacity: 1;
     z-index: 5;
     animation: show 0.6s;
@@ -162,8 +164,8 @@ input {
 
 .overlay {
     background: #941633;
-    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-    background: linear-gradient(to right, #FF4B2B, #FF416C);
+    background: -webkit-linear-gradient(to right, #0e0301, #FF416C);
+    background: linear-gradient(to right, #080200, #FF416C);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -177,7 +179,7 @@ input {
 }
 
 .container.right-panel-active .overlay {
-    transform: translateX(30%);
+    transform: translateX(50%);
 }
 
 .overlay-panel {
@@ -200,7 +202,7 @@ input {
 }
 
 .container.right-panel-active .overlay-left {
-    transform: translateX(-20%);
+    transform: translateX();
 }
 
 .overlay-right {
