@@ -1,4 +1,4 @@
-{% load static %}
+{% load static  %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,14 +6,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'Step1_01_page\step1.css' %}">
-    <script src="{% static 'Step1_01_page\step 1.js' %}"></script>
+    <title>Personal Info</title>
+    <link rel="stylesheet" href="{% static 'Step_01_page/step_01.css' %}">
+    <script src="{% static 'Step_01_page/step_01.js' %}"></script>
 </head>
 
 <body>
     <div class="box">
         <div class="progress">
+<<<<<<< HEAD:Backend/project_01/templates/step1.html
             <span>Step1/5</span>
             <div class="progress-indi">
                 <div class="Chalu"></div>
@@ -22,12 +23,26 @@
                 <div></div>
                 <div></div>
             </div>
+=======
+        <span>Step1/5</span>
+        <div class="progress-indi">
+            <div class="Chalu"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+>>>>>>> b7115cdbddcb337764b81bf0c272f826b12622f3:Backend/project_01/templates/step_01.html
         </div>
 
         <div class="trans">
             <h1>Basic Verification</h1>
         </div>
+<<<<<<< HEAD:Backend/project_01/templates/step1.html
         <form method=="POST">
+=======
+        
+        <div class="trans"><h1>Basic Verification</h1></div>
+        <form method = "POST">
+>>>>>>> b7115cdbddcb337764b81bf0c272f826b12622f3:Backend/project_01/templates/step_01.html
             {% csrf_token %}
             <div>
                 <label for="first name">First Name</label>
@@ -49,10 +64,17 @@
             <div>
                 <label for="Place">Place</label>
                 <div class="Country">
+<<<<<<< HEAD:Backend/project_01/templates/step1.html
                     <select id="Counrty" required>
                         <option selected disabled>Select Country</option>
                         <option value="India">India</option>
                         <option value="Dubai Phata">Dubai Phata</option>
+=======
+                    <select id="Counrty" name = "country" required>
+                    <option value="">Select Country</option>
+                    <option value="India">India</option>
+                    <option value="Dubai Phata">Dubai Phata</option>
+>>>>>>> b7115cdbddcb337764b81bf0c272f826b12622f3:Backend/project_01/templates/step_01.html
                     </select>
                 </div>
                 <div class="pinc">
@@ -60,9 +82,16 @@
                     <input type="number" id="pincode" placeholder="6 digit Pincode" name="pincode" required>
                 </div>
                 <div class="Rdo">
+<<<<<<< HEAD:Backend/project_01/templates/step1.html
                     <label for="State">State <input type="text" id="state" placeholder="State" name="state"
                             readonly></label>
                     <label for="City">City <input type="text" id="city" placeholder="City" name="city" readonly></label>
+=======
+                    <label for="State">State</label>
+                         <input type="text" id="state" placeholder="State" name = "state">
+                    <label for="City">City</label>
+                         <input type="text" id="city" placeholder="City" name = "city">
+>>>>>>> b7115cdbddcb337764b81bf0c272f826b12622f3:Backend/project_01/templates/step_01.html
                 </div>
             </div>
             <button id="Next">Next</button>

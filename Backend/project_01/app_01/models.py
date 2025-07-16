@@ -2,16 +2,16 @@ from django.db import models
 
 # Create your models here.
 
-
-class step_01(models.Model):
-    firstName = models.CharField(max_length=30)
-    lastName = models.CharField(max_length=30)
+class BasicInfo(models.Model):
+    firstName = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
     gender = models.CharField(max_length=10)
-    dob = models.DateField( auto_now=False, auto_now_add=False)
-    country = models.CharField(max_length=30)
-    pinCode = models.CharField(max_length=50)
+    dob = models.DateField()
+    country = models.CharField(max_length=100)
+    pincode = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.firstName
-
+        return self.firstName + " " + self.lastName
 
