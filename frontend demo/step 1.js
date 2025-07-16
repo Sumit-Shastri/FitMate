@@ -37,13 +37,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-let elements = document.getElementsByClassName("Country");
-let ch = elements[0]; // Or elements[0] if you want the first element
 
-if (ch) { // Check if the element exists
-  ch.addEventListener("change", () => {
-    alert(`You selected: ${ch.value}`);
-  });
-} else {
-  console.error("Element with class 'Country' at index 1 not found.");
-}
+// for country drop down mitar
+let popularCountries = ["India", "United States", "United Kingdom", "Canada", "Australia", "Germany", "France", "Italy",
+  "China", "Japan", "South Korea", "Russia", "Brazil", "Mexico", "Spain", "Netherlands", "Switzerland",
+  "Singapore", "UAE", "Saudi Arabia", "South Africa", "Turkey", "New Zealand", "Sweden", "Norway",
+  "Ireland", "Argentina", "Bangladesh", "Belgium", "Denmark", "Egypt", "Indonesia", "Malaysia",
+  "Nepal", "Pakistan", "Philippines", "Portugal", "Qatar", "Thailand", "Vietnam"
+];
+
+const countrySelect = document.getElementById("country");
+
+popularCountries.forEach(country => {
+  const option = document.createElement("option");
+  option.value = country;
+  option.textContent = country;
+  countrySelect.appendChild(option);
+});
