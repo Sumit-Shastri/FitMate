@@ -104,7 +104,14 @@ form select:focus {
     transition: transform 0.2s ease;
 }
 
+option{
+    height: 30%;
+    /* background-color: red; */
+    cursor: pointer;
+    
 
+
+}
 
 
 .gender label {
