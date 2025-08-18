@@ -11,7 +11,9 @@ class BasicInfo(models.Model):
     pincode = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
+    asach = models.CharField(max_length=50)
 
     def __str__(self):
         return self.firstName + " " + self.lastName
+
 
