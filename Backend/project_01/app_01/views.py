@@ -13,6 +13,11 @@ from django.utils.http import urlsafe_base64_decode
 from django.template.loader import render_to_string
 # Create your views here.
 
+
+def signin_signup(request):
+    return render(request, '01_signin_signup_page.html')
+
+
 def login_user(request):
     if request.method == "POST":
         username = request.POST.get("username")
