@@ -18,9 +18,9 @@ let inputs = document.querySelector("input");
 form.addEventListener("submit",(dets)=>{
     dets.preventDefault();
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    let ans = regex.test("vijay12@domain.co.in")
+    let ans = regex.test(`${inputs.value}`)
     console.log(ans);
-    const regex2 = /^[a-zA-Z0-9_]{3,20}$/;
+    const regex2 = /^[a-zA-Z0-9_]{3,10}$/;
     let ans2 = regex2.test(`${inputs.value}`);
     console.log(ans2);
 });

@@ -48,7 +48,7 @@ let popularCountries = ["India", "United States", "United Kingdom", "Canada", "A
 
 const countrySelect = document.getElementById("country");
 
-popularCountries.forEach(country => {
+popularCountries.forEach(country=> {
   const option = document.createElement("option");
   option.value = country;
   option.textContent = country;

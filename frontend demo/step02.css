@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.box {
+  height: 100%;
+  width: 60%;
+  max-width: 600px;
+  background: #f3eeae;
+  margin: 50px auto;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.progress span {
+  font-weight: 600;
+}
+
+.progress-indi {
+  width: 130px;
+  display: flex;
+  gap: 10px;
+}
+
+.progress-indi div {
+  height: 10px;
+  flex: 1;
+  background: #e0e0e0;
+  border-radius: 5px;
+}
+
+.progress-indi .Chalu {
+  background: #007bff;
+  transition: width 0.3s ease-in-out;
+}
+
+#head {
+  display: flex;
+  position: absolute;
+  top: 15%;
+}
+
+#head h1 {
+  font-weight: 700;
+}

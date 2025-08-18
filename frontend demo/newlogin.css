@@ -240,7 +240,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Theme */
 body.dark-theme {
   background-color: #121212;
   color: white;
