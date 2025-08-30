@@ -141,6 +141,21 @@ form label {
   color: #333;
 }
 
+#bmi button {
+  width: 90%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(120, 81%, 60%, 0.685);
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+}
 #bmi input {
   width: 90%;
   max-width: 300px;
@@ -153,12 +168,10 @@ form label {
   outline: none;
 }
 
-/* Read-only input */
 #bmi input[readonly] {
   background-color: #f9f9f9;
 }
 
-/* BMI Gauge (SVG Container) */
 .immg {
   width: 100%;
   display: flex;
@@ -167,18 +180,11 @@ form label {
   margin-top: 10px;
 }
 
-.immg svg {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Hover/Focus for inputs */
 #bmi input:focus {
   border-color: #007bff;
   box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
   #bmi {
     width: 95%;
@@ -250,4 +256,11 @@ button:hover {
   .dropdown-group {
     flex-direction: column;
   }
+}
+
+text #bmi-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
 }
