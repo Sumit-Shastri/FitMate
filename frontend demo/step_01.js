@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
   nextButton.addEventListener("click", async () => {
     const pincode = pincodeField.value.trim();
 
-    // if (pincode.length !== 6 || isNaN(pincode)) {
-    //   alert("Enter a valid pincode Buddy");
-    //   return;
-    // }
+    if (pincode.length !== 6 || isNaN(pincode)) {
+      alert("Enter a valid pincode Buddy");
+      return;
+    }
 
     try {
       const response = await fetch(`https://api.postalpincode.in/pincode/${pincode}`);

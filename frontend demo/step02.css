@@ -15,7 +15,7 @@ body {
 .box {
   width: 90%;
   max-width: 800px;
-  background: #f3eeae;
+  background: #c4b812;
   margin: 40px auto;
   padding: 10px;
   position: relative;
@@ -94,7 +94,6 @@ form label {
   outline: none;
 }
 .inps {
-  position: relative;
   padding-left: 10px;
 }
 .input-box input {
@@ -122,10 +121,8 @@ form label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  /* background-color: red; */
   gap: 12px;
-  inset: 10px 10px 80px 460px;
+  inset: 180px 10px 80px 460px;
   padding: 10px;
   width: 40%;
   height: 300px;
@@ -136,6 +133,7 @@ form label {
 }
 
 #bmi label {
+  padding: 0 0 10px 0;
   font-weight: 600;
   font-size: 16px;
   color: #333;
@@ -178,8 +176,21 @@ form label {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-}
 
+  position: relative;
+}
+.curve {
+  max-height: 150px;
+  max-width: 270px;
+  position: a;
+}
+.chn {
+  position: absolute;
+  left: 10px;
+  stroke-width: 3px;
+  stroke: #070707;
+  fill: blue;
+}
 #bmi input:focus {
   border-color: #007bff;
   box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
@@ -263,4 +274,11 @@ text #bmi-text {
   justify-content: center;
   align-items: center;
   padding-left: 10px;
+}
+
+.speedo-cont {
+  width: 200px;
+  height: 150px;
+  font-size: 18px;
+  display: none;
 }

@@ -1,13 +1,15 @@
 let sub = document.querySelector("#cal");
 sub.addEventListener("click",()=>{
     console.log("clicked");
-    BmiCal()
+    BmiCal();
+   
+
 });
 
 function BmiCal() {
     const height = parseFloat(document.querySelector("#height").value)/100;
     const weight = parseFloat(document.querySelector("#weight").value);
-    const result = document.querySelector("#status");
+    const result = document.querySelector("#sttus");
     console.log(result)
 
     
@@ -21,7 +23,7 @@ function BmiCal() {
     };
 
   
-    const bmi = (weight / (height * height)).toFixed(2);
+    const bmi = (weight / (height * height)).toFixed(1);
     let status = "";
 
     if (bmi < 18.5) status = "Underweight";
@@ -31,27 +33,45 @@ function BmiCal() {
 
     result.value = `BMI: ${bmi} (${status})`;
 
-const suii = document.querySelector("svg line");
+  
+    gsap.registerPlugin(ScrollTrigger);
+    const fnt = document.querySelector(".speedo-cont");
+    fnt.style.display = "initial";
+    console.log(fnt);
+    gsap.from(fnt,{
+        delay: 3,
+        duration: 1,
+        y:30,
+        opacity:0,
+        stagger:0.5,
+        yoyo:true,
+        scrollTrigger:{
+        trigger:"fnt",
+        scrub:2
+}
+    })
+}
 
-const minBMI = 10;
-const maxBMI = 40;
-const minAngle = -90;  
-const maxAngle = 90;  
+const elastic = document.querySelector(".curve");
 
-const clampedBMI = Math.max(minBMI, Math.min(bmi, maxBMI));
+var path = `M 30 30 Q 100 60 200 60`
 
-const angle = ((clampedBMI - minBMI) / (maxBMI - minBMI)) * (maxAngle - minAngle) + minAngle;
-console.log(angle);
+var fpath = `M 30 30 Q 100 30 250 30`
 
-gsap.to(suii, {
-    duration: 1,
-    rotation: angle,
-    transformOrigin: "140px 140px" 
+
+elastic.addEventListener("mousemove",(dets)=>{
+    path = `M 10 100 Q ${dets.x} ${dets.y} 990 100`
+    console.log(dets)
+    gsap.to("svg path",{
+        attr:{d:path},
+        duration:0.5,
+        ease:"power3.out"
+    })
 })
-    console.log(suii);
-
-const txt = document.querySelector("#bmi-text");
-txt.textContent = "";
-txt.textContent = `BMI = ${bmi}`; 
-
-};
+elastic.addEventListener("mouseleave",()=>{
+    gsap.to("svg path",{
+        attr:{d:fpath},
+        duration:0.6,
+        ease:"elastic.out(1.2,0.2)"
+    })
+})

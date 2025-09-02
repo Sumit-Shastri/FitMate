@@ -91,6 +91,9 @@ input {
   display: none;
 }
 
+.social-container i:hover {
+  transform: scale(1.2);
+}
 .container {
   background-color: #fff;
   border-radius: 10px;
