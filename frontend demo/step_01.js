@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
   nextButton.addEventListener("click", async () => {
     const pincode = pincodeField.value.trim();
 
-    if (pincode.length !== 6 || isNaN(pincode)) {
-      alert("Thik se daal chutiye.");
-      return;
-    }
+    // if (pincode.length !== 6 || isNaN(pincode)) {
+    //   alert("Enter a valid pincode Buddy");
+    //   return;
+    // }
 
     try {
       const response = await fetch(`https://api.postalpincode.in/pincode/${pincode}`);
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         alert("Invalid pincode. Please try again.");
       }
+      
     } catch (error) {
       console.error("Error fetching details:", error);
       alert("Failed to fetch pincode details. Please try again later.");
