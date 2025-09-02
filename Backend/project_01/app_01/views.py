@@ -15,7 +15,7 @@ from django.template.loader import render_to_string
 
 
 def signin_signup(request):
-    return render(request, '01_signin_signup_page.html')
+    return render(request, '01_signin_signup.html')
 
 
 def login_user(request):
