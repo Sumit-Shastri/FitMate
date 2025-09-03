@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step 2</title>
     <link rel="stylesheet" href="step02.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"  />
 </head>
 <body>
     <div class="box">
@@ -44,14 +45,14 @@
     <button id="cal">Calculate</button>
     <input type="text" id="sttus" placeholder="Bmi Status" >
     <div class="immg">
-   <div class="curve">
+   <!-- <div class="curve">
         <svg  width="250" height="100" xmlns="http://www.w3.org/2000/svg">
   <path id="chn" d="M 10 80 Q 95 10 180 80"  />
 </svg>
-      </div>
+      </div> -->
      <div class="speedo-cont">
    
-      <p>Don't worry! Bmi doesn't tell the full story. A muscular body builder can also hae high BMI.</p>
+      <p>Don't worry! Bmi doesn't tell the full story. A muscular body builder can also have high BMI.</p>
     </div>
     </div>
   </div>
@@ -76,7 +77,8 @@
         <button onclick="window.location.href='step1.html'">Back</button> 
       </div>
       <div class="next">
-        <button>Next</button>
+        <button onclick="window.location.href=`step03.html`">Next</button>
+        <p class="hvr">Measurment Ahead<i class="fa-solid fa-face-smile-wink"></i></p>
       </div>
 </div>
 

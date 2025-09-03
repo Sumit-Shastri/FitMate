@@ -277,8 +277,24 @@ text #bmi-text {
 }
 
 .speedo-cont {
+  display: inline-flex;
   width: 200px;
   height: 150px;
   font-size: 18px;
   display: none;
+}
+
+.next {
+  display: flex;
+  height: 50px;
+  position: relative;
+  justify-content: center;
+}
+.hvr {
+  border: solid 1px green;
+  border-radius: 20%;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
 }
