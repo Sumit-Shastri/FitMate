@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+:root {
+  --carret: 2px;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #070707;
+}
+
+.Content {
+  width: 90%;
+  max-width: 800px;
+  background: #c4b812;
+  margin: 40px auto;
+  padding: 10px;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.progress span {
+  font-weight: 600;
+  color: #333;
+}
+
+.progress-indi {
+  width: 130px;
+  display: flex;
+  gap: 10px;
+}
+
+.progress-indi div {
+  height: 10px;
+  flex: 1;
+  background: #e0e0e0;
+  border-radius: 5px;
+}
+
+.progress-indi .Chalu {
+  background: #007bff;
+  transition: width 0.3s ease-in-out;
+}
+
+.head {
+  text-align: start;
+  position: absolute;
+  top: 2%;
+  width: 400px;
+  margin: 5px 10px 10px 5px;
+}
+
+.head h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #222;
+}
+.para {
+  display: grid;
+  margin: 10px 10px 10px 5px;
+  width: 400px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+}
+
+#upp {
+  text-transform: capitalize;
+  font-size: clamp(15px, 3vw, 25px);
+  font-family: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: var(--caret) solid #e2e8f0;
+  animation: typing 2.8s steps(24) forwards, blink 0.7s steps(1) infinite;
+}
+@keyframes typing {
+  to {
+    width: 25ch;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.para2 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-left: 5px;
+}
+
+.inps {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px 10px 5px;
+  gap: 10px;
+}
+
+form label {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+form input {
+  height: 40px;
+  width: 200px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid grey;
+  box-shadow: rgba(1, 2, 0, 0.3);
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.results {
+  display: flex;
+  position: absolute;
+  right: 2%;
+  height: 200px;
+  width: 480px;
+  background-color: red;
+  margin: 20px 5px 5px 10px;
+  padding: 5px;
+}
+.con {
+  display: flex;
+  height: 100px;
+  width: 300px;
+  background-color: red;
+  margin: 2px 5px 5px 5px;
+  padding: 5px;
+}
+
+button#back {
+  height: 40px;
+  width: 100px;
+  background-color: red;
+  margin: 5px 10px 5px 5px;
+}
+button#next {
+  height: 40px;
+  width: 100px;
+  background-color: red;
+  margin: 5px 10px 5px 5px;
+}
+
+button {
+  font-size: 20px;
+}
