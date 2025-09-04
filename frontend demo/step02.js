@@ -1,13 +1,15 @@
 let sub = document.querySelector("#cal");
 sub.addEventListener("click",()=>{
     console.log("clicked");
-    BmiCal()
+    BmiCal();
+   
+
 });
 
 function BmiCal() {
     const height = parseFloat(document.querySelector("#height").value)/100;
     const weight = parseFloat(document.querySelector("#weight").value);
-    const result = document.querySelector("#status");
+    const result = document.querySelector("#sttus");
     console.log(result)
 
     
@@ -21,7 +23,7 @@ function BmiCal() {
     };
 
   
-    const bmi = (weight / (height * height)).toFixed(2);
+    const bmi = (weight / (height * height)).toFixed(1);
     let status = "";
 
     if (bmi < 18.5) status = "Underweight";
@@ -31,27 +33,44 @@ function BmiCal() {
 
     result.value = `BMI: ${bmi} (${status})`;
 
-const suii = document.querySelector("svg line");
+  
+    gsap.registerPlugin(ScrollTrigger);
+    const fnt = document.querySelector(".speedo-cont");
+    fnt.style.display = "initial";
+    console.log(fnt);
+    gsap.from(fnt,{
+        delay: 1,
+        duration: 1,
+        y:30,
+        opacity:0,
+        stagger:0.8,
+        yoyo:true,
+        scrollTrigger:{
+        trigger:"fnt",
+        scrub:2
+}
+    })
+}
 
-const minBMI = 10;
-const maxBMI = 40;
-const minAngle = -90;  
-const maxAngle = 90;  
 
-const clampedBMI = Math.max(minBMI, Math.min(bmi, maxBMI));
 
-const angle = ((clampedBMI - minBMI) / (maxBMI - minBMI)) * (maxAngle - minAngle) + minAngle;
-console.log(angle);
+const next = document.querySelector(".next");
+const hover = document.querySelector(".hvr");
 
-gsap.to(suii, {
-    duration: 1,
-    rotation: angle,
-    transformOrigin: "140px 140px" 
+next.addEventListener("mouseenter",()=>{
+    gsap.to(hover,{
+        x:100,
+        opacity:1,
+        zIndex: 1,
+        
+        ease: "power2.out"
+    })
 })
-    console.log(suii);
-
-const txt = document.querySelector("#bmi-text");
-txt.textContent = "";
-txt.textContent = `BMI = ${bmi}`; 
-
-};
+next.addEventListener("mouseleave",()=>{
+    gsap.to(hover,{
+        x:0,
+        opacity:0,
+        zIndex: -1,
+        ease: "power3.out"
+    })
+})
