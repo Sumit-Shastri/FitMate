@@ -3,7 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const pincodeField = document.getElementById("pincode");
   const stateField = document.getElementById("state");
   const cityField = document.getElementById("city");
+  
+  nextButton.addEventListener("click",()=>{
+const gender = document.querySelector("#gender").value;
+    if(!gender){
+      console.error("Gender not found ");
+      return;    
+    }
+    localStorage.setItem("usergender",gender);
 
+    window.location.href = "step02.html";
+    console.log(nextButton);
+
+  })
 
   if (!nextButton) {
     console.error("Element with ID 'Next' not found.");

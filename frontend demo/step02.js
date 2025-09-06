@@ -1,18 +1,17 @@
+document.addEventListener("DOMContentLoader",()=>{
 let sub = document.querySelector("#cal");
 sub.addEventListener("click",()=>{
     console.log("clicked");
     BmiCal();
-   
-
 });
-
+});
+    
 function BmiCal() {
     const height = parseFloat(document.querySelector("#height").value)/100;
     const weight = parseFloat(document.querySelector("#weight").value);
-    const result = document.querySelector("#sttus");
-    console.log(result)
 
-    
+    const result = document.querySelector("#sttus");
+    console.log(result);
 
     if (!weight || !height || weight <= 0 || height <= 0) {
         result.value = "Insaan hi hoo na aap?";
@@ -51,12 +50,25 @@ function BmiCal() {
 }
     })
 }
-
-
-
+document.addEventListener("DOMContentLoaded",()=>{
 const next = document.querySelector(".next");
 const hover = document.querySelector(".hvr");
+console.log(next)
+next.addEventListener("click",()=>{
+    const height = document.querySelector("#height").value;
+    const weight = document.querySelector("#weight").value;
+    if (!heightInput || !weightInput) {
+            console.error("❌ #height or #weight input not found in HTML");
+            return;
+        }
 
+    localStorage.setItem("userheight",height);
+    localStorage.setItem("userWeight",weight);
+
+    window.location.href = "step03.html";
+    console.log(next);
+});
+});
 next.addEventListener("mouseenter",()=>{
     gsap.to(hover,{
         x:100,

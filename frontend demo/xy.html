@@ -1,37 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Typewriter (GSAP TextPlugin)</title>
-<style>
-  body { display:grid; place-items:center; min-height:100vh; margin:0; background:#0b1020; color:#e6edf3; font-family:ui-monospace, Consolas, monospace; }
-  .wrap { display:flex; align-items:center; gap:.5rem; }
-  .caret {
-    width: 2px; height: 1.1em; background: currentColor;
-    animation: blink .7s steps(1) infinite;
-  }
-  @keyframes blink { 50% { opacity: 0; } }
-  h1 { margin:0; font-size: clamp(22px, 6vw, 48px); }
-</style>
+  <meta charset="UTF-8">
+  <title>Body Fat Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+    .container { background: white; padding: 20px; border-radius: 10px; width: 350px; margin: auto; }
+    label { display: block; margin-top: 10px; }
+    input { width: 100%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 15px; padding: 10px; width: 100%; cursor: pointer; }
+    .result { margin-top: 20px; padding: 10px; background: #e3f7e3; border-radius: 5px; }
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1 id="line"></h1>
-    <span class="caret"></span>
+  <div class="container">
+    <h2>Body Fat Calculator</h2>
+
+    <label>Height (cm):</label>
+    <input type="number" id="height">
+
+    <label>Neck (cm):</label>
+    <input type="number" id="neck">
+
+    <label>Waist (cm):</label>
+    <input type="number" id="waist">
+
+    <label>Hips (cm):</label>
+    <input type="number" id="hips">
+
+    <label>Weight (kg):</label>
+    <input type="number" id="weight">
+
+    <button onclick="calculateBodyFat()">Calculate</button>
+
+    <div class="result" id="output"></div>
   </div>
 
-  <!-- GSAP core + TextPlugin -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/TextPlugin.min.js"></script>
   <script>
-    gsap.registerPlugin(TextPlugin);
+    function calculateBodyFat() {
+      let height = parseFloat(document.getElementById("height").value);
+      let neck = parseFloat(document.getElementById("neck").value);
+      let waist = parseFloat(document.getElementById("waist").value);
+      let hips = parseFloat(document.getElementById("hips").value);
+      let weight = parseFloat(document.getElementById("weight").value);
 
-    const msg = "Typing with GSAP is smooth ✨";
-    gsap.to("#line", {
-      duration: 2.5,
-      text: { value: msg },
-      ease: "none"
-    });
+      if (!height || !neck || !waist || !weight) {
+        document.getElementById("output").innerHTML = "<b>Please enter all required values.</b>";
+        return;
+      }
+
+      // Default to "male" Navy formula since gender is removed
+      let bodyFat = 86.010 * Math.log10(waist - neck) 
+                  - 70.041 * Math.log10(height) 
+                  + 36.76;
+
+      let fatMass = (bodyFat / 100) * weight;
+      let leanMass = weight - fatMass;
+
+      document.getElementById("output").innerHTML = `
+        <b>Body Fat %:</b> ${bodyFat.toFixed(2)}% <br>
+        <b>Fat Mass:</b> ${fatMass.toFixed(1)} kg <br>
+        <b>Lean Mass:</b> ${leanMass.toFixed(1)} kg
+      `;
+    }
   </script>
 </body>
 </html>

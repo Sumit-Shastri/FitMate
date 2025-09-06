@@ -27,24 +27,26 @@
     <p class="para2">get ready to feel like a ninja,tailor or marvel superhero because its Measurement time</p>
     <form action="">
     <div class="inps">
-        <label for="neck">Neck:<input type="number" id="Neck" (cm) placeholder="Enter neck size"></label>
-        <label for="Waist">Waist:<input type="number" id="waist"(cm) placeholder="Enter waist size"></label>
-        <label for="Hips">Hips:<input type="number" id="hips" placeholder="Enter hips size" (cm) ></label>
+        <label for="neck">Neck (cm):<input type="number" id="Neck"  placeholder="Enter neck size"></label>
+        <label for="Waist">Waist (cm):<input type="number" id="waist" placeholder="Enter waist size"></label>
+        <label for="Hips">Hips (cm):<input type="number" id="hips" placeholder="Enter hips size"></label>
         <div class="results">
-            hi
-            
+            <button class="res">Calculate</button>
+            <div id="calcu">
+              h
+            </div>
         </div>
     </div>
     </form>
     <div class="con">
-        h
+        <p>we have estimated your body fat with 90% accuracy! But if you want to go crazy , have look at next step</p>
+        <!-- <p>But if you want to go crazy , have look at next step</p> -->
     </div>
-    <button id="back">⬅Back</button>
-    <button id="next">Next➡</button>
+    <button onclick="window.location.href=`step02.html`" id="back">⬅Back</button>
+    <button  id="next">Next➡</button>
     </div>
     <script src="step03.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.min.js"></script>
-    <script src="step02.js"></script> 
 </body>
 </html>

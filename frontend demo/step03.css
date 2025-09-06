@@ -86,7 +86,7 @@ body {
   overflow: hidden;
   width: 0;
   border-right: var(--caret) solid #e2e8f0;
-  animation: typing 2.8s steps(24) forwards, blink 0.7s steps(1) infinite;
+  animation: typing 2s steps(24) forwards, blink 0.7s steps(1) infinite;
 }
 @keyframes typing {
   to {
@@ -132,11 +132,12 @@ form input {
 .results {
   display: flex;
   position: absolute;
+  justify-content: center;
   right: 2%;
-  height: 200px;
-  width: 480px;
+  height: 300px;
+  width: 420px;
   background-color: red;
-  margin: 20px 5px 5px 10px;
+  margin: 10px 2px 5px 15px;
   padding: 5px;
 }
 .con {
@@ -163,4 +164,31 @@ button#next {
 
 button {
   font-size: 20px;
+  cursor: pointer;
+}
+
+.results button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50%;
+}
+
+#calcu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 20px;
+  height: 200px;
+  width: 300px;
+
+  font-size: 21px;
+  white-space: nowrap;
+}
+
+#calcu span {
+  position: relative;
+  left: 40%;
+  bottom: 15%;
 }
