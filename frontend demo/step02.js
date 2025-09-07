@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoader",()=>{
-let sub = document.querySelector("#cal");
+const sub = document.querySelector(".cal");
 sub.addEventListener("click",()=>{
     console.log("clicked");
     BmiCal();
@@ -53,7 +53,6 @@ function BmiCal() {
 document.addEventListener("DOMContentLoaded",()=>{
 const next = document.querySelector(".next");
 const hover = document.querySelector(".hvr");
-console.log(next)
 next.addEventListener("click",()=>{
     const height = document.querySelector("#height").value;
     const weight = document.querySelector("#weight").value;
@@ -66,9 +65,8 @@ next.addEventListener("click",()=>{
     localStorage.setItem("userWeight",weight);
 
     window.location.href = "step03.html";
-    console.log(next);
 });
-});
+
 next.addEventListener("mouseenter",()=>{
     gsap.to(hover,{
         x:100,
@@ -85,4 +83,5 @@ next.addEventListener("mouseleave",()=>{
         zIndex: -1,
         ease: "power3.out"
     })
-})
+});
+});

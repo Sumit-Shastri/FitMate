@@ -8,10 +8,19 @@ document.addEventListener("DOMContentLoaded",()=>{
     console.log("ur gender: ", gender);
 
     const btnres = document.querySelector(".res");
+    const para = document.querySelector(".con");
     btnres.addEventListener("click",(e)=>{
         e.preventDefault();
             bodyfat();
+            para.style.display = "block";
             console.log(btnres);
+            gsap.from(para,{
+                opacity:0,
+                delay: 2,
+                y:70,
+                stagger:1,
+                duration: 1
+            })
         });
 
         function bodyfat(){
@@ -19,11 +28,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     const waist = document.querySelector("#waist").value;
     const hips = document.querySelector("#hips").value;
     
-
-     
-    if(!neck || !waist || !hips || !height || !weight){
-        
-       document.getElementById("calcu").textContent = "Bhakhdau thik se daal re";
+    if(!neck || !waist || !hips ){
+     document.querySelector("#calcu").innerHTML = `<b>Bhaadkau Thik se Daal!</b>`;
+     return;
     }
     let bodyFat = 86.010 * Math.log10(waist - neck) 
                   - 70.041 * Math.log10(height) 

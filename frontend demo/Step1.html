@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="step1.css">
 </head>
 
-<body>
-    <div class="box">
+<body data-barba="wrapper">
+    <div class="box" data-barba="container" data-barba-namespace="step1">
         <div class="progress">
             <span>Step1/5</span>
             <div class="progress-indi">
@@ -64,6 +64,9 @@
        
     </div>
      <script src="step_01.js"></script>
+     <script src="https://unpkg.com/@barba/core"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
 </body>
 
 </html>

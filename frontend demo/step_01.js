@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const nextButton = document.getElementById("Next");
+  const next = document.getElementById("Next");
   const pincodeField = document.getElementById("pincode");
   const stateField = document.getElementById("state");
   const cityField = document.getElementById("city");
   
-  nextButton.addEventListener("click",()=>{
+next.addEventListener("click",()=>{
 const gender = document.querySelector("#gender").value;
     if(!gender){
       console.error("Gender not found ");
@@ -13,17 +13,17 @@ const gender = document.querySelector("#gender").value;
     localStorage.setItem("usergender",gender);
 
     window.location.href = "step02.html";
-    console.log(nextButton);
+    console.log(gender);
 
   })
 
-  if (!nextButton) {
+  if (!next) {
     console.error("Element with ID 'Next' not found.");
     return;
   }
 
 
-  nextButton.addEventListener("click", async () => {
+  next.addEventListener("click", async () => {
     const pincode = pincodeField.value.trim();
 
     if (pincode.length !== 6 || isNaN(pincode)) {
@@ -66,4 +66,29 @@ popularCountries.forEach(country=> {
   option.value = country;
   option.textContent = country;
   countrySelect.appendChild(option);
+});
+barba.init({
+  transitions: [
+    {
+      name: 'slide-left',
+      async leave(data) {
+        // Animate old page sliding left
+        await gsap.to(data.current.container, {
+          x: "-100%",
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.inOut"
+        });
+      },
+      enter(data) {
+        // Animate new page sliding from right
+        return gsap.from(data.next.container, {
+          x: "100%",
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.inOut"
+        });
+      }
+    }
+  ]
 });
