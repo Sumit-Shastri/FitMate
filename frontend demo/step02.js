@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoader",()=>{
-const sub = document.querySelector(".cal");
+document.addEventListener("DOMContentLoaded",()=>{
+let sub = document.querySelector("#cal");
 sub.addEventListener("click",()=>{
     console.log("clicked");
     BmiCal();
 });
-});
+
     
 function BmiCal() {
     const height = parseFloat(document.querySelector("#height").value)/100;
@@ -50,7 +50,6 @@ function BmiCal() {
 }
     })
 }
-document.addEventListener("DOMContentLoaded",()=>{
 const next = document.querySelector(".next");
 const hover = document.querySelector(".hvr");
 next.addEventListener("click",()=>{
@@ -72,7 +71,6 @@ next.addEventListener("mouseenter",()=>{
         x:100,
         opacity:1,
         zIndex: 1,
-        
         ease: "power2.out"
     })
 })

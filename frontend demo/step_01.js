@@ -67,28 +67,4 @@ popularCountries.forEach(country=> {
   option.textContent = country;
   countrySelect.appendChild(option);
 });
-barba.init({
-  transitions: [
-    {
-      name: 'slide-left',
-      async leave(data) {
-        // Animate old page sliding left
-        await gsap.to(data.current.container, {
-          x: "-100%",
-          opacity: 0,
-          duration: 0.6,
-          ease: "power2.inOut"
-        });
-      },
-      enter(data) {
-        // Animate new page sliding from right
-        return gsap.from(data.next.container, {
-          x: "100%",
-          opacity: 0,
-          duration: 0.6,
-          ease: "power2.inOut"
-        });
-      }
-    }
-  ]
-});
+

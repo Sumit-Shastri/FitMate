@@ -291,10 +291,12 @@ text #bmi-text {
   justify-content: center;
 }
 .hvr {
-  border: solid 1px green;
-  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
   position: absolute;
+  font-weight: 600;
   z-index: -1;
-  opacity: 0;
-  pointer-events: none;
+  background-image: linear-gradient(to right, #fff, #111);
 }

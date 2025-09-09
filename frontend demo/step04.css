@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+:root {
+  --carret: 2px;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #070707;
+}
+
+.Content {
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  background: #78b5f1d5;
+  margin: 40px auto;
+  padding: 10px;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 6px 6px 20px #f5f7f18e, inset -10px 10px 20px #ffffff3b;
+}
+
+.progress {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  position: absolute;
+  right: -20px;
+  margin: 20px 0px 10px 10px;
+  gap: 10px;
+}
+
+.progress span {
+  font-weight: 600;
+  color: #333;
+}
+
+.progress-indi {
+  width: 130px;
+  display: flex;
+  gap: 10px;
+}
+
+.progress-indi div {
+  height: 10px;
+  flex: 1;
+  background: #e0e0e0;
+  border-radius: 5px;
+}
+
+.progress-indi .Chalu {
+  /* background: #007bff; */
+  transition: width 0.3s ease-in-out;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes example {
+  0% {
+    background: white;
+  }
+
+  100% {
+    background: #007bff;
+  }
+}
+
+.progress-indi .Chalu:hover {
+  box-shadow: 5px 5px 10px #3cbdce,
+    inset -3px -3px 10px rgba(38, 38, 185, 0.438);
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+.head {
+  text-align: start;
+  position: relative;
+  top: 0;
+
+  width: 500px;
+  margin: 5px 10px 10px 5px;
+  padding: 5px;
+}
+
+.head h1 {
+  font-weight: 700;
+  font-size: 2.3rem;
+  word-spacing: 2px;
+  letter-spacing: 2px;
+  -webkit-text-stroke: 1px #000;
+  color: black;
+}
+
+.para {
+  display: flex;
+  margin: 5px 10px 10px 5px;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 0, 0, 0.288);
+}
+.para p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000ad;
+}
+
+.pyq {
+  width: 600px;
+  background-color: rebeccapurple;
+  margin: 10px 5px 5px 20px;
+}
+
+form label {
+  font-size: 20px;
+}
